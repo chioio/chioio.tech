@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+yarn
+
+yarn build
+
+fun deploy -y

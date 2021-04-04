@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 export PORT=9000
+
 npx next start --port $PORT
