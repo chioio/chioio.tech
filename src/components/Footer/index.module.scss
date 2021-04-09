@@ -1,0 +1,45 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  .deployInfo {
+    color: #303030;
+    a {
+      display: inline;
+      color: #0070f3;
+      font-size: 1rem;
+    }
+  }
+
+  .copyright {
+    color: #808080;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    & {
+      p {
+        margin: 0.35rem 0;
+      }
+      .deployInfo {
+        font-size: 0.9rem;
+        a {
+          font-size: 1rem;
+        }
+      }
+      .copyright {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
