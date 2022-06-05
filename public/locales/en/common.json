@@ -1,0 +1,13 @@
+{
+  "social": {
+    "banner": {
+      "echo": "If you like this site, please give a star on GitHub!"
+    }
+  },
+  "navigation": {
+    "notes": "Notes",
+    "posts": "Blog",
+    "wow": "Wow!",
+    "readme": "README"
+  }
+}
