@@ -3,7 +3,7 @@ import { useImmerReducer } from 'use-immer'
 
 import tailwind from '@/configs/tailwind'
 import { hexToRgb } from '@/utils/hex-to-rgb'
-import { useMounted } from '@/hooks'
+import { useMount } from 'react-use'
 
 type State = {
   isDark: boolean
@@ -75,7 +75,7 @@ const GlobalProvider: React.FC<React.PropsWithChildren<{}>> = ({
 }) => {
   const [state, dispatch] = useImmerReducer(reducer, initState)
 
-  useMounted(() => {
+  useMount(() => {
     const storeTheme = (mode?: boolean) => {
       const randomColor: { [key: string]: string } =
         colorful[Math.floor(Math.random() * colorful.length)]

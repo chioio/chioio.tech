@@ -9,9 +9,7 @@ import { motion } from 'framer-motion'
 import type { GetStaticProps } from 'next'
 
 import {
-  CommunityLinks,
   Copyright,
-  LocaleSwitcher,
   Logo,
   Navigation,
   PoweredBy,
@@ -52,27 +50,30 @@ export default function HomePage() {
   return (
     <main
       className={cn(
-        'grow grid grid-cols-1 grid-rows-2 mx-auto max-w-4xl w-full h-full'
+        'grow flex items-center justify-center mx-auto w-full h-full'
       )}>
       <motion.p
         variants={hero}
         initial="hidden"
         animate="visible"
         className={cn(
-          'grow flex flex-col justify-end animate-fade-in-bt text-center'
+          'grow flex flex-col justify-end mx-auto max-w-sm text-center',
+          'sm:max-w-4xl'
         )}>
         <span
           className={cn(
-            'text-8xl text-white tracking-wider',
+            'text-4xl text-white tracking-wider',
+            'sm:text-8xl',
             locale === 'en' ? 'font-extrabold font-[Jost]' : 'font-black'
           )}>
           {t('hero.pre')}
         </span>
         <code
           className={cn(
-            'ml-auto px-3 py-2 w-fit rounded-lg align-middle text-5xl font-bold shadow-inner duration-500',
+            'ml-auto px-1.5 py-1 w-fit rounded-lg align-middle text-lg font-bold shadow-inner duration-500',
+            'sm:text-5xl sm:px-3 sm:py-2',
             'bg-gray-800/70 text-main-500',
-            locale === 'en' ? 'mr-12' : 'mt-4 mr-48'
+            locale === 'en' ? 'mr-0' : 'mt-4 mr-0'
           )}>
           {t('hero.explorer')}
         </code>
@@ -101,13 +102,9 @@ HomePage.getLayout = (page: React.ReactElement) => {
           'fixed flex flex-col w-screen h-screen z-10'
         )}>
         <SocialBanner />
-        <header className={cn('flex items-center px-8 py-4 space-x-8')}>
+        <header className={cn('flex items-center px-8 py-4')}>
           <Logo />
           <Navigation />
-          <CommunityLinks />
-          <span className={cn('text-2xl')}>
-            <LocaleSwitcher />
-          </span>
         </header>
         {page}
         <footer className={cn('relative flex flex-col items-center px-8 py-4')}>

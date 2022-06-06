@@ -1,4 +1,3 @@
-export * from './CommunityLinks'
 export * from './Copyright'
 export * from './LocaleSwitcher'
 export * from './Logo'

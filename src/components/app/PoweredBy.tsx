@@ -13,16 +13,20 @@ export const PoweredBy: React.FC = () => (
       Nebula
     </ExternalLink>
     <div className={cn('flex items-center space-x-2')}>
-      <ExternalLink href="https://nextjs.org" className={cn('w-36')}>
-        <NextJsLogo className={cn('ml-auto hover:text-main-500')} />
+      <ExternalLink href="https://nextjs.org" className={cn('', 'sm:w-36')}>
+        <NextJsLogo
+          className={cn('ml-auto h-6', 'sm:h-fit', 'hover:text-main-500')}
+        />
       </ExternalLink>
       <ExternalLink
         href="https://tailwindcss.com"
-        className={cn('w-36 text-center')}>
-        <TailwindLogo className={cn('mx-auto hover:text-main-500')} />
+        className={cn('text-center', 'sm:w-36')}>
+        <TailwindLogo
+          className={cn('mx-auto h-3', 'sm:h-fit', 'hover:text-main-500')}
+        />
       </ExternalLink>
-      <ExternalLink href="https://contentlayer.dev" className={cn('w-36')}>
-        <ContentlayerLogo className={cn('mr-auto hover:text-main-500')} />
+      <ExternalLink href="https://contentlayer.dev" className={cn('sm:w-36')}>
+        <ContentlayerLogo className={cn('mr-auto', 'hover:text-main-500')} />
       </ExternalLink>
     </div>
     <p className={cn('mr-6 text-xs text-center leading-relaxed')}>Powered by</p>
@@ -86,14 +90,20 @@ const TailwindLogo: React.FC<React.SVGAttributes<SVGAElement>> = (props) => (
 const ContentlayerLogo: React.FC<React.SVGAttributes<SVGAElement>> = (
   props
 ) => (
-  <span className={cn('flex space-x-2 text-base font-medium', props.className)}>
+  <span
+    className={cn(
+      'flex space-x-2 text-sm font-normal',
+      'sm:text-base sm:font-medium',
+      props.className
+    )}>
     <svg
       aria-label="Contentlayer"
       width="20"
       height="22"
       viewBox="0 0 22 24"
       fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg">
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('h-5', 'sm:h-fit')}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"

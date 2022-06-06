@@ -9,7 +9,7 @@ export const SocialBanner: React.FC = () => {
   return (
     <div
       className={cn(
-        'py-1.5 w-full text-sm text-center',
+        'z-50 py-1.5 w-full text-sm text-center',
         'bg-main-500 dark:bg-main-500'
       )}>
       <ExternalLink
