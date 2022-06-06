@@ -30,6 +30,21 @@
 }
 
 @layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    @apply hidden;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-main-500/20 rounded-full;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-main-500/80 dark:bg-main-500;
+  }
 }
 
 @layer components {
