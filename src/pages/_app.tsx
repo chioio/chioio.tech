@@ -7,6 +7,7 @@ import type { AppProps } from 'next/app'
 import type { NextPage } from 'next'
 
 import '@/styles/globals.css'
+import { SocialBanner } from '@/components/app'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: React.ReactElement) => React.ReactNode
@@ -20,7 +21,18 @@ function _App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
-    <GlobalProvider>{getLayout(<Component {...pageProps} />)}</GlobalProvider>
+    <GlobalProvider>
+      <AppLayout>{getLayout(<Component {...pageProps} />)}</AppLayout>
+    </GlobalProvider>
+  )
+}
+
+const AppLayout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+  return (
+    <div className="fixed w-screen h-screen overflow-hidden flex flex-col">
+      <SocialBanner />
+      {children}
+    </div>
   )
 }
 

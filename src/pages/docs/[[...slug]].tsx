@@ -17,6 +17,7 @@ import {
   Logo,
   MadeBy,
   ModeSwitcher,
+  SocialBanner,
 } from '@/components/app'
 import { IconJuejin } from '@/components/icons'
 import { generatePaths } from '@/utils/generate-paths'
@@ -111,10 +112,10 @@ export default function DocsPage({
 
   return (
     <div
-      className={cn('flex flex-row w-screen', 'bg-white dark:bg-gray-900/50')}>
+      className={cn('grow flex flex-row w-screen overflow-auto', 'bg-white dark:bg-gray-900/50')}>
       <aside
         className={cn(
-          'flex flex-col max-w-xs h-screen w-full border-r',
+          'flex flex-col max-w-xs w-full border-r',
           'border-r-gray-200/70 dark:border-r-gray-800'
         )}>
         <div className={cn('flex flex-col pl-8 pr-4 py-4')}>

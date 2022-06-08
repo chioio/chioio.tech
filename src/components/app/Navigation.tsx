@@ -130,7 +130,7 @@ const MobileNavigation: React.FC<{ links: any[] }> = ({ links }) => {
         animate={opened ? 'visible' : 'hidden'}
         className={cn(
           'fixed right-0 inset-y-0 z-10 grow flex flex-col pt-24 pb-16 px-8',
-          asPath === '/' ? 'bg-gray-900' : 'bg-gray-100 dark:bg-gray-900'
+          asPath === '/' ? 'bg-black' : 'bg-gray-100 dark:bg-black'
         )}>
         <ul className={cn('grow flex flex-col space-y-3.5 w-full')}>
           {links.map((link) => (

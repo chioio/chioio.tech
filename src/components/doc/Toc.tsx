@@ -17,11 +17,11 @@ export const Toc: React.FC<TocProps> = ({ headings }) => {
   return (
     <nav
       className={cn(
-        'space-y-4 px-6 py-8 max-w-xs w-full border-l',
+        'flex flex-col space-y-4 px-6 py-8 max-w-xs w-full border-l',
         'border-l-gray-100 dark:border-l-gray-800'
       )}>
       <h3 className={cn('uppercase font-medium')}>{t('toc')}</h3>
-      <div className={cn('h-full')}>
+      <div className={cn('grow')}>
         <ul className={cn('space-y-1.5')}>
           {headings?.length > 0 &&
             headings

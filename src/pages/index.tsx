@@ -1,21 +1,13 @@
 import * as React from 'react'
 import cn from 'classnames'
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
-import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { motion } from 'framer-motion'
+import { useMedia } from 'react-use'
 
 import type { GetStaticProps } from 'next'
 
-import {
-  Logo,
-  Navigation,
-  MadeBy,
-  PoweredBy,
-  SocialBanner,
-} from '@/components/app'
-import { useMedia } from 'react-use'
+import { Logo, Navigation, MadeBy, PoweredBy } from '@/components/app'
 
 const ReactNebula = dynamic(
   import('@flodlc/nebula').then((mod) => mod.ReactNebula),
@@ -88,7 +80,7 @@ HomePage.getLayout = (page: React.ReactElement) => {
           starsCount: 400,
           starsRotationSpeed: 2,
           cometFrequence: 20,
-          nebulasIntensity: 9,
+          nebulasIntensity: 0,
           sunScale: 0,
           planetsScale: 0,
           bgColor: 'rgb(8,8,8)',
@@ -97,15 +89,18 @@ HomePage.getLayout = (page: React.ReactElement) => {
       <div
         className={cn(
           '!text-white', // body text color
-          'fixed flex flex-col w-screen h-screen z-10'
+          'grow flex flex-col w-screen h-screen z-10'
         )}>
-        <SocialBanner />
         <header className={cn('flex items-center px-8 py-4')}>
           <Logo />
           <Navigation />
         </header>
         {page}
-        <footer className={cn('relative flex flex-col items-center px-8 pt-4 pb-16', 'sm:pb-14')}>
+        <footer
+          className={cn(
+            'relative flex flex-col items-center px-8 pt-4 pb-16',
+            'sm:pb-14'
+          )}>
           {/* Powered By */}
           <PoweredBy />
           {/* Made By */}
