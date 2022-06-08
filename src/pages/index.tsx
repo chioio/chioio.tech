@@ -9,9 +9,9 @@ import { motion } from 'framer-motion'
 import type { GetStaticProps } from 'next'
 
 import {
-  Copyright,
   Logo,
   Navigation,
+  MadeBy,
   PoweredBy,
   SocialBanner,
 } from '@/components/app'
@@ -110,8 +110,8 @@ HomePage.getLayout = (page: React.ReactElement) => {
         <footer className={cn('relative flex flex-col items-center px-8 py-4')}>
           {/* Powered By */}
           <PoweredBy />
-          {/* Copyright */}
-          <Copyright />
+          {/* Made By */}
+          <MadeBy />
         </footer>
       </div>
     </>

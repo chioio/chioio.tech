@@ -2,7 +2,7 @@ import * as React from 'react'
 import cn from 'classnames'
 
 import {
-  Copyright,
+  MadeBy,
   Logo,
   Navigation,
   SocialBanner,
@@ -24,7 +24,7 @@ export const PageLayout: React.FC<React.PropsWithChildren<{}>> = ({
       </header>
       {children}
       <footer className={cn('flex flex-col items-center px-8 py-4')}>
-        <Copyright />
+        <MadeBy />
       </footer>
     </div>
   )

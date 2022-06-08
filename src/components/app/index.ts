@@ -1,6 +1,6 @@
-export * from './Copyright'
 export * from './LocaleSwitcher'
 export * from './Logo'
+export * from './MadeBy'
 export * from './Navigation'
 export * from './PoweredBy'
 export * from './ModeSwitcher'

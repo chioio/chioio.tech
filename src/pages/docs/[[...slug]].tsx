@@ -12,10 +12,10 @@ import type {
 } from 'next'
 
 import {
-  Copyright,
   ExternalLink,
   LocaleSwitcher,
   Logo,
+  MadeBy,
   ModeSwitcher,
 } from '@/components/app'
 import { IconJuejin } from '@/components/icons'
@@ -162,7 +162,7 @@ export default function DocsPage({
                 <IconJuejin className={cn('w-6 h-6', 'hover:text-main-500')} />
               </ExternalLink>
             </div>
-            <Copyright />
+            <MadeBy />
           </div>
         </div>
       </aside>
