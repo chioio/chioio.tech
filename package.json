@@ -11,7 +11,6 @@
     "format": "prettier --config .prettierrc --write \"./**/*.{js,ts,jsx,tsx,css}\""
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.5.2",
     "classnames": "^2.3.1",
     "contentlayer": "^0.2.5",
     "framer-motion": "^6.3.10",
@@ -27,6 +26,7 @@
   },
   "devDependencies": {
     "@flodlc/nebula": "^1.0.56",
+    "@tailwindcss/typography": "^0.5.2",
     "@types/node": "17.0.40",
     "@types/react": "18.0.11",
     "@types/react-dom": "18.0.5",

@@ -1,2 +1,3 @@
-export * from './DocsNavigation'
-export * from './DocsSearch'
+export * from './Navigation'
+export * from './Search'
+export * from './Toc'

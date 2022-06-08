@@ -8,11 +8,11 @@ import { motion } from 'framer-motion'
 import { FaChevronRight } from 'react-icons/fa'
 import { TreeNodeType } from '@/utils/build-docs-tree'
 
-interface DocNavigationProps {
+interface NavigationProps {
   tree: TreeNodeType[]
 }
 
-export const DocNavigation: React.FC<DocNavigationProps> = ({ tree }) => {
+export const Navigation: React.FC<NavigationProps> = ({ tree }) => {
   const { asPath } = useRouter()
 
   return (
@@ -30,7 +30,7 @@ export const DocNavigation: React.FC<DocNavigationProps> = ({ tree }) => {
           </span>
         </a>
       </Link>
-      <Tree tree={tree} level={0} activeRoute={asPath} />
+      <Tree tree={tree} level={0} />
     </nav>
   )
 }
@@ -38,36 +38,29 @@ export const DocNavigation: React.FC<DocNavigationProps> = ({ tree }) => {
 interface TreeProps {
   tree: TreeNodeType[]
   level: number
-  activeRoute: string
 }
 
-export const Tree: React.FC<TreeProps> = ({ tree, level, activeRoute }) => {
-  return (
-    <ul
-      className={cn(
-        'relative space-y-2',
-        level > 0 ? 'ml-4 text-base' : 'text-lg'
-      )}>
-      {tree.map((node, index) => (
-        <TreeNode
-          key={index}
-          node={node}
-          level={level}
-          activeRoute={activeRoute}
-        />
-      ))}
-    </ul>
-  )
-}
+export const Tree: React.FC<TreeProps> = ({ tree, level }) => (
+  <ul
+    className={cn(
+      'relative space-y-2',
+      level > 0 ? 'ml-4 text-base' : 'text-lg'
+    )}>
+    {tree.map((node, index) => (
+      <TreeNode key={index} node={node} level={level} />
+    ))}
+  </ul>
+)
 
 interface TreeNodeProps {
   node: TreeNodeType
   level: number
-  activeRoute: string
 }
 
-const TreeNode: React.FC<TreeNodeProps> = ({ node, level, activeRoute }) => {
+const TreeNode: React.FC<TreeNodeProps> = ({ node, level }) => {
+  const { asPath } = useRouter()
   // When page loaded, check the expand navigation.
+  const [activeRoute] = asPath.match(/^([\/\w\-]+)/) || []
   const isNodeUncollapsed =
     // level 1
     activeRoute === node.route ||
@@ -76,7 +69,6 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, level, activeRoute }) => {
     // level 3
     activeRoute.split('/').slice(0, 4).join('/') === node.route
 
-  // const [uncollapsed, setUncollapsed] = Motion.useCycle(isUncollapsed, false)
   const [uncollapsed, setUncollapsed] = React.useState(isNodeUncollapsed)
 
   // When click the level 2 cate, keep the level 1 expanded.
@@ -114,11 +106,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, level, activeRoute }) => {
           initial="hidden"
           animate={uncollapsed ? 'visible' : 'hidden'}
           className={cn('mt-2')}>
-          <Tree
-            tree={node.children}
-            level={level + 1}
-            activeRoute={activeRoute}
-          />
+          <Tree tree={node.children} level={level + 1} />
         </motion.div>
       )}
     </li>
@@ -143,32 +131,30 @@ const TreeNodeLink: React.FC<TreeNodeLinkProps> = ({
   collapsible,
   uncollapsed,
   onClick,
-}) => {
-  return (
-    <Link href={route}>
-      <a onClick={onClick}>
-        <span
-          className={cn(
-            'flex items-center justify-between px-4 py-1 rounded-md',
-            route === activeRoute
-              ? 'text-main-500 dark:text-main-500 bg-main-500/10 dark:bg-main-500/10'
-              : 'hover:bg-gray-200/40 hover:dark:bg-gray-800/40',
-            !collapsible && level > 0 ? 'font-light' : 'py-1'
-          )}>
-          {title}
-          {collapsible && (
-            <FaChevronRight
-              className={cn(
-                'shrink-0 text-sm transition-transform duration-300',
-                route === activeRoute
-                  ? 'text-main-500 dark:text-main-500'
-                  : 'text-gray-300 dark:text-gray-500',
-                uncollapsed && 'rotate-90'
-              )}
-            />
-          )}
-        </span>
-      </a>
-    </Link>
-  )
-}
+}) => (
+  <Link href={route}>
+    <a onClick={onClick}>
+      <span
+        className={cn(
+          'flex items-center justify-between px-3 py-1 rounded-md',
+          route === activeRoute
+            ? 'text-main-500 dark:text-main-500 bg-main-500/10 dark:bg-main-500/10'
+            : 'hover:bg-gray-200/40 hover:dark:bg-gray-800/40',
+          !collapsible && level > 0 ? 'font-light' : 'py-1'
+        )}>
+        {title}
+        {collapsible && (
+          <FaChevronRight
+            className={cn(
+              'shrink-0 text-sm transition-transform duration-300',
+              route === activeRoute
+                ? 'text-main-500 dark:text-main-500'
+                : 'text-gray-300 dark:text-gray-500',
+              uncollapsed && 'rotate-90'
+            )}
+          />
+        )}
+      </span>
+    </a>
+  </Link>
+)

@@ -2,7 +2,7 @@ import * as React from 'react'
 import cn from 'classnames'
 import { IoSearchSharp } from 'react-icons/io5'
 
-export const DocsSearch: React.FC = () => {
+export const Search: React.FC = () => {
   const id = React.useId()
 
   return (

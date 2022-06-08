@@ -23,8 +23,8 @@ import { generatePaths } from '@/utils/generate-paths'
 import { DocMeta } from '@/contentlayer/types/doc'
 import { allDocs, Doc } from '.contentlayer'
 import { LocaleType } from '@/typings'
-import { generateDocsTree } from '@/utils/build-docs-tree'
-import { DocNavigation, DocsSearch } from '@/components/doc'
+import { generateDocsTree, TreeNodeType } from '@/utils/build-docs-tree'
+import { Navigation, Search, Toc } from '@/components/doc'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: [
@@ -34,7 +34,10 @@ export const getStaticPaths: GetStaticPaths = async () => ({
   fallback: false,
 })
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps<
+  { doc: Doc; tree: TreeNodeType[] },
+  {}
+> = async (context) => {
   const [params, locale] = [
     context.params as { slug?: string[] },
     context.locale as LocaleType,
@@ -78,7 +81,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['common'])),
+      ...(await serverSideTranslations(locale!, ['common', 'docs'])),
       doc,
       tree,
     },
@@ -144,11 +147,11 @@ export default function DocsPage({
         </div>
         <hr className={cn('border-gray-200/70 dark:border-gray-800')} />
         <div className={cn('flex flex-col pl-8 pr-4 py-4')}>
-          <DocsSearch />
+          <Search />
         </div>
         <hr className={cn('border-gray-200/70 dark:border-gray-800')} />
         <div className="grow flex flex-col space-y-4 pl-8 pr-4 py-4 overflow-y-hidden">
-          <DocNavigation tree={tree} />
+          <Navigation tree={tree} />
           <div className={cn('flex flex-col items-center space-y-2')}>
             <div className={cn('flex space-x-6')}>
               <ExternalLink
@@ -172,13 +175,7 @@ export default function DocsPage({
             <h1 className={cn('')}>{doc.title}</h1>
           </div>
         </div>
-        <nav
-          className={cn(
-            'px-6 py-8 max-w-xs w-full border-l',
-            'border-l-gray-100 dark:border-l-gray-800'
-          )}>
-          <span>Page navigate</span>
-        </nav>
+        <Toc headings={doc.headings} />
       </main>
     </div>
   )
