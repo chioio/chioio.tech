@@ -15,6 +15,7 @@ import {
   PoweredBy,
   SocialBanner,
 } from '@/components/app'
+import { useMedia } from 'react-use'
 
 const ReactNebula = dynamic(
   import('@flodlc/nebula').then((mod) => mod.ReactNebula),
@@ -25,13 +26,12 @@ const ReactNebula = dynamic(
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale!, ['home', 'common'])),
+    ...(await serverSideTranslations(locale!, ['common'])),
   },
 })
 
 export default function HomePage() {
-  const { t } = useTranslation('home')
-  const { locale } = useRouter()
+  const sm = useMedia('(min-width: 640px)', true)
 
   const hero = {
     hidden: {
@@ -57,25 +57,23 @@ export default function HomePage() {
         initial="hidden"
         animate="visible"
         className={cn(
-          'grow flex flex-col justify-end mx-auto max-w-sm text-center',
+          'grow flex flex-col justify-end mx-auto max-w-xs text-center font-extrabold font-[Jost]',
           'sm:max-w-4xl'
         )}>
         <span
           className={cn(
-            'text-4xl text-white tracking-wider',
-            'sm:text-8xl',
-            locale === 'en' ? 'font-extrabold font-[Jost]' : 'font-black'
+            'uppercase text-5xl leading-tight text-white tracking-wider',
+            'sm:text-8xl'
           )}>
-          {t('hero.pre')}
+          An {sm || <br />} App-Stack
         </span>
         <code
           className={cn(
-            'ml-auto px-1.5 py-1 w-fit rounded-lg align-middle text-lg font-bold shadow-inner duration-500',
-            'sm:text-5xl sm:px-3 sm:py-2',
-            'bg-gray-800/70 text-main-500',
-            locale === 'en' ? 'mr-0' : 'mt-4 mr-0'
+            'mx-auto mt-2 px-1.5 py-1 w-fit rounded-lg align-middle text-2xl font-bold shadow-inner duration-500',
+            'sm:ml-auto sm:mr-0 sm:mt-4 sm:text-5xl sm:px-3 sm:py-2',
+            'bg-gray-800/70 text-main-500'
           )}>
-          {t('hero.explorer')}
+          Explorer
         </code>
       </motion.p>
     </main>
@@ -107,7 +105,7 @@ HomePage.getLayout = (page: React.ReactElement) => {
           <Navigation />
         </header>
         {page}
-        <footer className={cn('relative flex flex-col items-center px-8 py-4')}>
+        <footer className={cn('relative flex flex-col items-center px-8 pt-4 pb-16', 'sm:pb-14')}>
           {/* Powered By */}
           <PoweredBy />
           {/* Made By */}
