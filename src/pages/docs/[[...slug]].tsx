@@ -1,6 +1,7 @@
 import * as React from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { FaGithubAlt } from 'react-icons/fa'
@@ -19,30 +20,31 @@ import {
   ModeSwitcher,
   SocialBanner,
 } from '@/components/app'
+import { Breadcrumbs, Search, Toc, Tree } from '@/components/doc'
 import { IconJuejin } from '@/components/icons'
 import { generatePaths } from '@/utils/generate-paths'
 import { DocMeta } from '@/contentlayer/types/doc'
 import { allDocs, Doc } from '.contentlayer'
-import { LocaleType } from '@/typings'
-import { generateDocsTree, TreeNodeType } from '@/utils/build-docs-tree'
-import { Navigation, Search, Toc } from '@/components/doc'
+import { generateDocsTree, TreeNode } from '@/utils/generate-docs-tree'
+import { Locale } from '@/typings'
 
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: [
-    ...generatePaths<DocMeta>(allDocs, 'en'),
-    ...generatePaths<DocMeta>(allDocs, 'zh'),
+    ...generatePaths<DocMeta>(allDocs, Locale.EN),
+    ...generatePaths<DocMeta>(allDocs, Locale.ZH),
   ],
   fallback: false,
 })
 
 export const getStaticProps: GetStaticProps<
-  { doc: Doc; tree: TreeNodeType[] },
-  {}
+  {
+    doc: Doc
+    tree: Array<TreeNode>
+    crumbs: Array<{ title: string; route: string }>
+  },
+  { slug?: string[] }
 > = async (context) => {
-  const [params, locale] = [
-    context.params as { slug?: string[] },
-    context.locale as LocaleType,
-  ]
+  const [params, locale] = [context.params, context.locale]
 
   const pageRoute = params?.slug?.join('/') ?? ''
 
@@ -74,17 +76,32 @@ export const getStaticProps: GetStaticProps<
     })
   }
 
+  const crumb = {
+    title: '',
+    route: '',
+  }
+
+  const crumbs = [
+    {
+      route: '/docs',
+      title: 'NOTES',
+    },
+    ...doc.meta.map(({ slug }: DocMeta) => {
+      crumb.route += crumb.route === '' ? slug : '/' + slug
+      const title = localeDocs.find((d) => d.route === crumb.route)?.title
+
+      return { route: '/docs/' + crumb.route, title }
+    }),
+  ]
+
   const tree = generateDocsTree(localeDocs)
-  // const childTree = generateDocsTree(
-  //   allDocs,
-  //   doc.meta.map((m: DocMeta) => m.slug)
-  // )
 
   return {
     props: {
       ...(await serverSideTranslations(locale!, ['common', 'docs'])),
       doc,
       tree,
+      crumbs,
     },
   }
 }
@@ -92,6 +109,7 @@ export const getStaticProps: GetStaticProps<
 export default function DocsPage({
   doc,
   tree,
+  crumbs,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation('common')
 
@@ -112,14 +130,17 @@ export default function DocsPage({
 
   return (
     <div
-      className={cn('grow flex flex-row w-screen overflow-auto', 'bg-white dark:bg-gray-900/50')}>
+      className={cn(
+        'grow flex flex-row w-screen overflow-auto',
+        'bg-white dark:bg-gray-900/50'
+      )}>
       <aside
         className={cn(
           'flex flex-col max-w-xs w-full border-r',
           'border-r-gray-200/70 dark:border-r-gray-800'
         )}>
-        <div className={cn('flex flex-col pl-8 pr-4 py-4')}>
-          <div className={cn('flex items-center justify-between pb-2')}>
+        <div className={cn('flex flex-col space-y-4 pl-8 pr-4 py-4')}>
+          <div className={cn('flex items-center justify-between')}>
             <Logo />
             <div className={cn('space-x-1 text-lg')}>
               <LocaleSwitcher />
@@ -152,7 +173,9 @@ export default function DocsPage({
         </div>
         <hr className={cn('border-gray-200/70 dark:border-gray-800')} />
         <div className="grow flex flex-col space-y-4 pl-8 pr-4 py-4 overflow-y-hidden">
-          <Navigation tree={tree} />
+          <nav className={cn('relative grow overflow-y-auto scrollbar')}>
+            <Tree tree={tree} level={0} />
+          </nav>
           <div className={cn('flex flex-col items-center space-y-2')}>
             <div className={cn('flex space-x-6')}>
               <ExternalLink
@@ -170,14 +193,16 @@ export default function DocsPage({
           </div>
         </div>
       </aside>
-      <main className={cn('grow flex w-full')}>
-        <div className={cn('grow px-10 py-6')}>
-          <div className={cn('prose dark:prose-invert')}>
-            <h1 className={cn('')}>{doc.title}</h1>
-          </div>
-        </div>
-        <Toc headings={doc.headings} />
-      </main>
+      <article className={cn('grow flex flex-col')}>
+        <header className={cn('px-10 pt-4')}>
+          <Breadcrumbs crumbs={crumbs} />
+          <h1 className={cn('leading-snug text-5xl font-medium')}>
+            {doc.title}
+          </h1>
+        </header>
+        <main className={cn('grow px-10 pt-6 pb-4 w-full')}></main>
+      </article>
+      <Toc headings={doc.headings} />
     </div>
   )
 }

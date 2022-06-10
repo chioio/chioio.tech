@@ -2,14 +2,15 @@ import * as React from 'react'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
 import { IoLanguageSharp } from 'react-icons/io5'
+import { Locale } from '@/typings'
 
 export const LocaleSwitcher: React.FC = () => {
   const { locale, push, route, asPath } = useRouter()
 
   const toggleLocale = () => {
     locale === 'en'
-      ? push(route, asPath, { locale: 'zh' })
-      : push(route, asPath, { locale: 'en' })
+      ? push(route, asPath, { locale: Locale.ZH })
+      : push(route, asPath, { locale: Locale.EN })
   }
 
   return (

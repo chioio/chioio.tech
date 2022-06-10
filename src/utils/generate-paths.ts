@@ -1,16 +1,16 @@
-import { LocaleType } from '@/typings'
+import { Locale } from '@/typings'
 import { DocumentGen } from 'contentlayer/core'
 
 export type GeneratePaths = {
   params: {
     slug: string | string[]
   }
-  locale: LocaleType
+  locale: Locale
 }[]
 
 export function generatePaths<T extends { order?: number; slug: string }>(
   docs: DocumentGen[],
-  locale: LocaleType
+  locale: Locale
 ): GeneratePaths {
   // Deduplicate meta data
   const meta = Array.from(

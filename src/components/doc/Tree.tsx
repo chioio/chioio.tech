@@ -3,40 +3,14 @@ import cn from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 
 import { FaChevronRight } from 'react-icons/fa'
-import { TreeNodeType } from '@/utils/build-docs-tree'
-
-interface NavigationProps {
-  tree: TreeNodeType[]
-}
-
-export const Navigation: React.FC<NavigationProps> = ({ tree }) => {
-  const { asPath } = useRouter()
-
-  return (
-    <nav className={cn('relative grow overflow-y-auto scrollbar')}>
-      <Link href={'/docs'}>
-        <a>
-          <span
-            className={cn(
-              'flex items-center justify-between mb-2 px-4 py-1 rounded-md text-lg font-medium',
-              asPath === '/docs'
-                ? 'text-main-500 dark:text-main-500 bg-main-500/10 dark:bg-main-500/10'
-                : 'hover:bg-gray-200/40 hover:dark:bg-gray-800/40'
-            )}>
-            NOTES
-          </span>
-        </a>
-      </Link>
-      <Tree tree={tree} level={0} />
-    </nav>
-  )
-}
+import { TreeNode } from '@/utils/generate-docs-tree'
+import { useMount } from 'react-use'
 
 interface TreeProps {
-  tree: TreeNodeType[]
+  tree: TreeNode[]
   level: number
 }
 
@@ -53,7 +27,7 @@ export const Tree: React.FC<TreeProps> = ({ tree, level }) => (
 )
 
 interface TreeNodeProps {
-  node: TreeNodeType
+  node: TreeNode
   level: number
 }
 
@@ -76,17 +50,21 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, level }) => {
     activeRoute.split('/').slice(0, 3).join('/') ===
     node.route.split('/').slice(0, 3).join('/')
 
-  const container = {
-    visible: {
-      height: 'fit-content',
-      opacity: 1,
-      transition: { duration: 0.3 },
-    },
-    hidden: {
-      height: 0,
-      opacity: 0,
-    },
-  }
+  const [variants, setVariants] = React.useState<Variants>()
+
+  useMount(() => {
+    setVariants({
+      visible: {
+        height: 'min-content',
+        opacity: 1,
+        transition: { duration: 0.3 },
+      },
+      hidden: {
+        height: 0,
+        opacity: 0,
+      },
+    })
+  })
 
   return (
     <li className={cn('relative')}>
@@ -102,10 +80,14 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, level }) => {
       />
       {node.children.length > 0 && cateRouteEqualed && (
         <motion.div
-          variants={container}
+          variants={variants}
           initial="hidden"
           animate={uncollapsed ? 'visible' : 'hidden'}
-          className={cn('mt-2')}>
+          className={cn(
+            'mt-2',
+            // Remove animation when locale changed.
+            uncollapsed || 'h-0 opacity-0 duration-0'
+          )}>
           <Tree tree={node.children} level={level + 1} />
         </motion.div>
       )}

@@ -3,4 +3,7 @@ export enum Themed {
   dark = 'DARK',
 }
 
-export type LocaleType = 'en' | 'zh'
+export enum Locale {
+  EN = 'en',
+  ZH = 'zh',
+}

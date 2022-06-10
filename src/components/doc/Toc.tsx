@@ -15,13 +15,14 @@ export const Toc: React.FC<TocProps> = ({ headings }) => {
   React.useEffect(() => {})
 
   return (
-    <nav
+    <aside
       className={cn(
-        'flex flex-col space-y-4 px-6 py-8 max-w-xs w-full border-l',
-        'border-l-gray-100 dark:border-l-gray-800'
+        'hidden flex-col space-y-4 px-6 py-8 max-w-xs w-full border-l',
+        'border-l-gray-100 dark:border-l-gray-800',
+        'xl:flex'
       )}>
       <h3 className={cn('uppercase font-medium')}>{t('toc')}</h3>
-      <div className={cn('grow')}>
+      <nav className={cn('grow')}>
         <ul className={cn('space-y-1.5')}>
           {headings?.length > 0 &&
             headings
@@ -43,7 +44,7 @@ export const Toc: React.FC<TocProps> = ({ headings }) => {
                 </li>
               ))}
         </ul>
-      </div>
-    </nav>
+      </nav>
+    </aside>
   )
 }
