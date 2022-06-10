@@ -89,18 +89,14 @@ HomePage.getLayout = (page: React.ReactElement) => {
       <div
         className={cn(
           '!text-white', // body text color
-          'grow flex flex-col w-screen h-screen z-10'
+          'grow flex flex-col z-10'
         )}>
         <header className={cn('flex items-center px-8 py-4')}>
           <Logo />
           <Navigation />
         </header>
         {page}
-        <footer
-          className={cn(
-            'relative flex flex-col items-center px-8 pt-4 pb-16',
-            'sm:pb-14'
-          )}>
+        <footer className={cn('relative flex flex-col items-center px-8 py-4')}>
           {/* Powered By */}
           <PoweredBy />
           {/* Made By */}

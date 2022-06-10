@@ -29,7 +29,7 @@ function _App({ Component, pageProps }: AppPropsWithLayout) {
 
 const AppLayout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
-    <div className="fixed w-screen h-screen overflow-hidden flex flex-col">
+    <div className="fixed inset-0 overflow-hidden flex flex-col">
       <SocialBanner />
       {children}
     </div>

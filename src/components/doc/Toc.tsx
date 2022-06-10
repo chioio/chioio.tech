@@ -12,8 +12,6 @@ export const Toc: React.FC<TocProps> = ({ headings }) => {
   const { t } = useTranslation('docs')
   const [currentIndex, setCurrentIndex] = React.useState(0)
 
-  React.useEffect(() => {})
-
   return (
     <aside
       className={cn(
