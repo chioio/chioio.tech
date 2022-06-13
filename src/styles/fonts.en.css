@@ -1,410 +1,407 @@
-@layer base {
-  /* Cano */
-  @font-face {
-    font-family: 'Cano';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 700;
-    src: url('/fonts/en/cano/Cano.ttf') format('truetype');
-  }
+/* Cano */
+@font-face {
+  font-family: 'Cano';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('/fonts/en/cano/Cano.ttf') format('truetype');
+}
 
-  /* Bowlby One SC */
-  @font-face {
-    font-family: 'Bowlby One SC';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 400;
-    src: url('/fonts/en/bowlby-one-sc/BowlbyOneSC-Regular.ttf')
-      format('truetype');
-  }
+/* Bowlby One SC */
+@font-face {
+  font-family: 'Bowlby One SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/en/bowlby-one-sc/BowlbyOneSC-Regular.ttf') format('truetype');
+}
 
-  /* Jost */
-  @font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 100;
-    src: url('/fonts/en/jost/Jost.ttf') format('truetype');
-  }
+/* Jost */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src: url('/fonts/en/jost/Jost.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 200;
-    src: url('/fonts/en/jost/Jost.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url('/fonts/en/jost/Jost.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 300;
-    src: url('/fonts/en/jost/Jost.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url('/fonts/en/jost/Jost.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 400;
-    src: url('/fonts/en/jost/Jost.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/en/jost/Jost.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 500;
-    src: url('/fonts/en/jost/Jost.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('/fonts/en/jost/Jost.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 600;
-    src: url('/fonts/en/jost/Jost.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/fonts/en/jost/Jost.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url('/fonts/en/jost/Jost.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/en/jost/Jost.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 800;
-    src: url('/fonts/en/jost/Jost.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('/fonts/en/jost/Jost.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'Jost';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 900;
-    src: url('/fonts/en/jost/Jost.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url('/fonts/en/jost/Jost.ttf') format('truetype');
+}
 
-  /* Kanit */
-  @font-face {
-    font-family: 'Kanit';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 100;
-    src: url('/fonts/en/kanit/Kanit-Thin.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+/* Kanit */
+@font-face {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src: url('/fonts/en/kanit/Kanit-Thin.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 100;
-    src: url('/fonts/en/kanit/Kanit-ThinItalic.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100;
+  src: url('/fonts/en/kanit/Kanit-ThinItalic.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 200;
-    src: url('/fonts/en/kanit/Kanit-ExtraLight.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url('/fonts/en/kanit/Kanit-ExtraLight.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 200;
-    src: url('/fonts/en/kanit/Kanit-ExtraLightItalic.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src: url('/fonts/en/kanit/Kanit-ExtraLightItalic.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 300;
-    src: url('/fonts/en/kanit/Kanit-Light.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url('/fonts/en/kanit/Kanit-Light.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 300;
-    src: url('/fonts/en/kanit/Kanit-LightItalic.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src: url('/fonts/en/kanit/Kanit-LightItalic.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 400;
-    src: url('/fonts/en/kanit/Kanit-Regular.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/en/kanit/Kanit-Regular.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 400;
-    src: url('/fonts/en/kanit/Kanit-Italic.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/en/kanit/Kanit-Italic.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 500;
-    src: url('/fonts/en/kanit/Kanit-Medium.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('/fonts/en/kanit/Kanit-Medium.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 500;
-    src: url('/fonts/en/kanit/Kanit-MediumItalic.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: url('/fonts/en/kanit/Kanit-MediumItalic.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 600;
-    src: url('/fonts/en/kanit/Kanit-SemiBold.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/fonts/en/kanit/Kanit-SemiBold.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 600;
-    src: url('/fonts/en/kanit/Kanit-SemiBoldItalic.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/fonts/en/kanit/Kanit-SemiBoldItalic.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 700;
-    src: url('/fonts/en/kanit/Kanit-Bold.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('/fonts/en/kanit/Kanit-Bold.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 700;
-    src: url('/fonts/en/kanit/Kanit-BoldItalic.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url('/fonts/en/kanit/Kanit-BoldItalic.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 800;
-    src: url('/fonts/en/kanit/Kanit-ExtraBold.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('/fonts/en/kanit/Kanit-ExtraBold.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 800;
-    src: url('/fonts/en/kanit/Kanit-ExtraBoldItalic.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src: url('/fonts/en/kanit/Kanit-ExtraBoldItalic.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 900;
-    src: url('/fonts/en/kanit/Kanit-Black.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url('/fonts/en/kanit/Kanit-Black.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  @font-face {
-    font-family: 'Kanit';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 900;
-    src: url('/fonts/en/kanit/Kanit-BlackItalic.ttf') format('truetype');
-    unicode-range: U+0000-007F;
-  }
+@font-face {
+  font-family: 'Kanit';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src: url('/fonts/en/kanit/Kanit-BlackItalic.ttf') format('truetype');
+  unicode-range: U+0000-007F;
+}
 
-  /* JetBrains Mono */
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 100;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
-  }
+/* JetBrains Mono */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 200;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 300;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 400;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 500;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 600;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 700;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 800;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 900;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono.ttf') format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 100;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
-      format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
+    format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 200;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
-      format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
+    format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 300;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
-      format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
+    format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 400;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
-      format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
+    format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 500;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
-      format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
+    format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 600;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
-      format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
+    format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 700;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
-      format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
+    format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 800;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
-      format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
+    format('truetype');
+}
 
-  @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 900;
-    src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
-      format('truetype');
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src: url('/fonts/en/jetbrains-mono/JetBrains-Mono-Italic.ttf')
+    format('truetype');
 }

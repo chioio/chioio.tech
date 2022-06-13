@@ -1,190 +1,188 @@
-@layer base {
-  /* Kanit */
-  @font-face {
-    font-family: 'PingFang ZH';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 100;
-    src: local('PingFang SC');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+/* Kanit */
+@font-face {
+  font-family: 'PingFang ZH';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src: local('PingFang SC');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 100;
-    src: local('PingFang SC Italic');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+@font-face {
+  font-family: 'PingFang ZH';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100;
+  src: local('PingFang SC Italic');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 200;
-    src: local('PingFang SC');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+@font-face {
+  font-family: 'PingFang ZH';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: local('PingFang SC');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 200;
-    src: local('PingFang SC Italic');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+@font-face {
+  font-family: 'PingFang ZH';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src: local('PingFang SC Italic');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 300;
-    src: local('PingFang SC');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+@font-face {
+  font-family: 'PingFang ZH';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: local('PingFang SC');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
+@font-face {
+  font-family: 'PingFang ZH';
 
-    font-style: italic;
-    font-display: swap;
-    font-weight: 300;
-    src: local('PingFang SC Italic');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src: local('PingFang SC Italic');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
+@font-face {
+  font-family: 'PingFang ZH';
 
-    font-style: normal;
-    font-display: swap;
-    font-weight: 400;
-    src: local('PingFang SC');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local('PingFang SC');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
+@font-face {
+  font-family: 'PingFang ZH';
 
-    font-style: italic;
-    font-display: swap;
-    font-weight: 400;
-    src: local('PingFang SC Italic');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: local('PingFang SC Italic');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
+@font-face {
+  font-family: 'PingFang ZH';
 
-    font-style: normal;
-    font-display: swap;
-    font-weight: 500;
-    src: local('PingFang SC');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: local('PingFang SC');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
+@font-face {
+  font-family: 'PingFang ZH';
 
-    font-style: italic;
-    font-display: swap;
-    font-weight: 500;
-    src: local('PingFang SC Italic');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: local('PingFang SC Italic');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 600;
-    src: local('PingFang SC');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+@font-face {
+  font-family: 'PingFang ZH';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: local('PingFang SC');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
+@font-face {
+  font-family: 'PingFang ZH';
 
-    font-style: italic;
-    font-display: swap;
-    font-weight: 600;
-    src: local('PingFang SC Italic');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: local('PingFang SC Italic');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 700;
-    src: local('PingFang SC');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+@font-face {
+  font-family: 'PingFang ZH';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local('PingFang SC');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
+@font-face {
+  font-family: 'PingFang ZH';
 
-    font-style: italic;
-    font-display: swap;
-    font-weight: 700;
-    src: local('PingFang SC Italic');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: local('PingFang SC Italic');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 800;
-    src: local('PingFang SC');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+@font-face {
+  font-family: 'PingFang ZH';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: local('PingFang SC');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
+@font-face {
+  font-family: 'PingFang ZH';
 
-    font-style: italic;
-    font-display: swap;
-    font-weight: 800;
-    src: local('PingFang SC Italic');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src: local('PingFang SC Italic');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 900;
-    src: local('PingFang SC');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+@font-face {
+  font-family: 'PingFang ZH';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: local('PingFang SC');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
+}
 
-  @font-face {
-    font-family: 'PingFang ZH';
-    font-style: italic;
-    font-display: swap;
-    font-weight: 900;
-    src: local('PingFang SC Italic');
-    /* Chinese unicode range */
-    unicode-range: U+4E00-9FFF;
-  }
+@font-face {
+  font-family: 'PingFang ZH';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src: local('PingFang SC Italic');
+  /* Chinese unicode range */
+  unicode-range: U+4E00-9FFF;
 }
