@@ -28,6 +28,11 @@
 }
 
 @layer utilities {
+  .writing-v-lr {
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+  }
+
   .scrollbar::-webkit-scrollbar {
     @apply w-1;
   }

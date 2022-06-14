@@ -11,6 +11,7 @@
     "format": "prettier --config .prettierrc --write \"./**/*.{js,ts,jsx,tsx,css,json}\""
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^1.1.5",
     "classnames": "^2.3.1",
     "contentlayer": "^0.2.5",
     "framer-motion": "^6.3.10",

@@ -19,7 +19,14 @@ import {
   MadeBy,
   ModeSwitcher,
 } from '@/components/app'
-import { Breadcrumbs, Search, Toc, Tree } from '@/components/doc'
+import {
+  Aside,
+  Breadcrumbs,
+  HeadingsAside,
+  SandpackAside,
+  Search,
+  Tree,
+} from '@/components/doc'
 import { IconJuejin } from '@/components/icons'
 import { generatePaths } from '@/utils/generate-paths'
 import { DocMeta } from '@/contentlayer/types/doc'
@@ -111,7 +118,6 @@ export default function DocsPage({
   crumbs,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation('common')
-
   const MDXContent = useMDXComponent(doc.body.code || '')
 
   const links = [
@@ -210,7 +216,14 @@ export default function DocsPage({
           <MDXContent />
         </main>
       </article>
-      <Toc headings={doc.headings} />
+      <Aside>
+        {(isSandpack) => (
+          <>
+            <HeadingsAside headings={doc.headings} visible={!isSandpack} />
+            <SandpackAside visible={isSandpack} />
+          </>
+        )}
+      </Aside>
     </div>
   )
 }
