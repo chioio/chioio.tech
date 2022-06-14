@@ -1,0 +1,55 @@
+@layer base {
+  .prose p code {
+    @apply px-1 rounded before:content-none after:content-none;
+    @apply text-main-500 bg-main-500/20;
+  }
+
+  /* Code Block */
+
+  html .prose div[data-rehype-pretty-code-fragment] *[data-theme='light'] {
+    @apply grid;
+  }
+
+  html .prose div[data-rehype-pretty-code-fragment] *[data-theme='dark'] {
+    @apply hidden;
+  }
+
+  html.dark .prose div[data-rehype-pretty-code-fragment] *[data-theme='dark'] {
+    @apply grid;
+  }
+
+  html.dark .prose div[data-rehype-pretty-code-fragment] *[data-theme='light'] {
+    @apply hidden;
+  }
+
+  .prose div[data-rehype-pretty-code-title] {
+    @apply px-2 py-1 rounded-t-md text-sm text-white bg-main-500;
+  }
+
+  .prose div[data-rehype-pretty-code-title] + pre {
+    @apply mt-0 rounded-t-none;
+  }
+
+  .prose pre {
+    @apply rounded-md p-0 bg-gray-200/60 dark:bg-gray-800/50;
+  }
+
+  .prose pre code {
+    counter-reset: line;
+  }
+
+  .prose pre code .line {
+    @apply px-4 w-full border-l-4 border-transparent;
+  }
+
+  .prose pre code .line::before {
+    counter-increment: line;
+    content: counter(line);
+
+    @apply inline-block w-4 mr-4 text-right text-gray-400 dark:text-gray-700;
+  }
+
+  .prose pre code .line.highlighted {
+    @apply border-main-500 bg-main-500/10 dark:bg-main-500/10;
+  }
+}

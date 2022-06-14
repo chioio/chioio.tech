@@ -1,10 +1,10 @@
 import * as React from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { FaGithubAlt } from 'react-icons/fa'
+import { useMDXComponent } from 'next-contentlayer/hooks'
 
 import type {
   GetStaticPaths,
@@ -18,7 +18,6 @@ import {
   Logo,
   MadeBy,
   ModeSwitcher,
-  SocialBanner,
 } from '@/components/app'
 import { Breadcrumbs, Search, Toc, Tree } from '@/components/doc'
 import { IconJuejin } from '@/components/icons'
@@ -113,6 +112,8 @@ export default function DocsPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const { t } = useTranslation('common')
 
+  const MDXContent = useMDXComponent(doc.body.code || '')
+
   const links = [
     {
       href: '/posts',
@@ -173,7 +174,7 @@ export default function DocsPage({
         </div>
         <hr className={cn('border-gray-200/70 dark:border-gray-800')} />
         <div className="grow flex flex-col space-y-4 pl-8 pr-4 py-4 overflow-y-hidden">
-          <nav className={cn('relative grow overflow-y-auto scrollbar')}>
+          <nav className={cn('relative grow overflow-y-scroll scrollbar')}>
             <Tree tree={tree} level={0} />
           </nav>
           <div className={cn('flex flex-col items-center space-y-2')}>
@@ -193,14 +194,21 @@ export default function DocsPage({
           </div>
         </div>
       </aside>
-      <article className={cn('grow flex flex-col')}>
+      <article className={cn('grow flex flex-col overflow-hidden')}>
         <header className={cn('px-10 pt-4')}>
           <Breadcrumbs crumbs={crumbs} />
+        </header>
+        <main
+          className={cn(
+            'relative grow px-16 max-w-none w-full overflow-y-scroll scrollbar-lg',
+            'prose dark:prose-invert',
+            'prose-headings:font-medium'
+          )}>
           <h1 className={cn('leading-snug text-5xl font-medium')}>
             {doc.title}
           </h1>
-        </header>
-        <main className={cn('grow px-10 pt-6 pb-4 w-full')}></main>
+          <MDXContent />
+        </main>
       </article>
       <Toc headings={doc.headings} />
     </div>

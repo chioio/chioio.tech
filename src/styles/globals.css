@@ -1,9 +1,7 @@
+@import url('./tailwind.css');
 @import url('./fonts.en.css');
 @import url('./fonts.zh.css');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('./markdown.css');
 
 @layer base {
   html {
@@ -43,6 +41,22 @@
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-main-500/80 dark:bg-main-500;
+  }
+
+  .scrollbar-lg::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+
+  .scrollbar-lg::-webkit-scrollbar-track {
+    @apply hidden;
+  }
+
+  .scrollbar-lg::-webkit-scrollbar-thumb {
+    @apply bg-main-500/20 rounded-full;
+  }
+
+  .scrollbar-lg::-webkit-scrollbar-thumb:hover {
     @apply bg-main-500/80 dark:bg-main-500;
   }
 }
