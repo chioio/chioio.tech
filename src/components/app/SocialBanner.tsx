@@ -1,4 +1,4 @@
-import React from 'react'
+import type React from 'react'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
 
@@ -11,12 +11,14 @@ export const SocialBanner: React.FC = () => {
     <div
       className={cn(
         'z-50 py-1 w-full text-sm text-center',
-        'bg-main-400 dark:bg-main-500'
+        'bg-theme-400 dark:bg-theme-500'
       )}>
       <p
         className={cn(
           'duration-300',
-          asPath === '/' ? 'text-main-100' : 'text-main-900 dark:text-main-100'
+          asPath === '/'
+            ? 'text-theme-100'
+            : 'text-theme-900 dark:text-theme-100'
         )}>
         {BANNER}
       </p>

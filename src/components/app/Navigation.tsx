@@ -1,14 +1,18 @@
-import * as React from 'react'
+import type React from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
-import { motion, SVGMotionProps, useCycle } from 'framer-motion'
+import { motion, useCycle } from 'framer-motion'
 import { useMedia } from 'react-use'
+import { FaGithubAlt } from 'react-icons/fa'
+
+import type { SVGMotionProps } from 'framer-motion'
 
 import { ExternalLink, LocaleSwitcher, ModeSwitcher } from '@/components/app'
 import { IconJuejin } from '@/components/icons'
-import { FaGithubAlt } from 'react-icons/fa'
+
+type Links = Array<{ href: string; label: string }>
 
 const indicator = {
   hidden: {
@@ -41,7 +45,7 @@ export const Navigation: React.FC = () => {
   const { t } = useTranslation('common')
   const sm = useMedia('(min-width: 640px)', true)
 
-  const links = [
+  const links: Links = [
     {
       href: '/docs',
       label: t('navigation.notes'),
@@ -70,7 +74,7 @@ export const Navigation: React.FC = () => {
   )
 }
 
-const DesktopNavigation: React.FC<{ links: any[] }> = ({ links }) => {
+const DesktopNavigation: React.FC<{ links: Links }> = ({ links }) => {
   const { asPath, locale } = useRouter()
 
   return (
@@ -81,7 +85,7 @@ const DesktopNavigation: React.FC<{ links: any[] }> = ({ links }) => {
           <a className={cn('relative')}>
             <span
               className={cn(
-                'text-lg leading-normal hover:text-main-500',
+                'text-lg leading-normal hover:text-theme-500',
                 locale === 'en' || 'font-medium'
               )}>
               {link.label}
@@ -91,7 +95,7 @@ const DesktopNavigation: React.FC<{ links: any[] }> = ({ links }) => {
               initial="hidden"
               animate={asPath === link.href ? 'visible' : 'hidden'}
               className={cn(
-                'absolute -bottom-1 inset-x-0 mx-auto w-full h-[0.2rem] rounded-full bg-main-500'
+                'absolute -bottom-1 inset-x-0 mx-auto w-full h-[0.2rem] rounded-full bg-theme-500'
               )}
             />
           </a>
@@ -101,12 +105,12 @@ const DesktopNavigation: React.FC<{ links: any[] }> = ({ links }) => {
         <ExternalLink
           href="https://github.com/chioio"
           className={cn('row-span-3 flex items-center justify-center')}>
-          <FaGithubAlt className={cn('w-6 h-6', 'hover:text-main-500')} />
+          <FaGithubAlt className={cn('w-6 h-6', 'hover:text-theme-500')} />
         </ExternalLink>
         <ExternalLink
           href="https://juejin.cn/user/1521379825688637"
           className={cn('row-span-3 flex items-center justify-center')}>
-          <IconJuejin className={cn('w-6 h-6', 'hover:text-main-500')} />
+          <IconJuejin className={cn('w-6 h-6', 'hover:text-theme-500')} />
         </ExternalLink>
       </div>
       <div className={cn('flex text-2xl', asPath !== '/' && 'space-x-2')}>
@@ -117,7 +121,7 @@ const DesktopNavigation: React.FC<{ links: any[] }> = ({ links }) => {
   )
 }
 
-const MobileNavigation: React.FC<{ links: any[] }> = ({ links }) => {
+const MobileNavigation: React.FC<{ links: Links }> = ({ links }) => {
   const { asPath, locale } = useRouter()
   const [opened, toggle] = useCycle(false, true)
 
@@ -139,7 +143,7 @@ const MobileNavigation: React.FC<{ links: any[] }> = ({ links }) => {
                 <a className={cn('relative')}>
                   <span
                     className={cn(
-                      'text-lg text-center leading-normal hover:text-main-500',
+                      'text-lg text-center leading-normal hover:text-theme-500',
                       locale === 'en' || 'font-medium'
                     )}>
                     {link.label}
@@ -149,7 +153,7 @@ const MobileNavigation: React.FC<{ links: any[] }> = ({ links }) => {
                     initial="hidden"
                     animate={asPath === link.href ? 'visible' : 'hidden'}
                     className={cn(
-                      'absolute -bottom-1 inset-x-0 mx-auto w-full h-[0.2rem] rounded-full bg-main-500'
+                      'absolute -bottom-1 inset-x-0 mx-auto w-full h-[0.2rem] rounded-full bg-theme-500'
                     )}
                   />
                 </a>
@@ -160,14 +164,14 @@ const MobileNavigation: React.FC<{ links: any[] }> = ({ links }) => {
             <ExternalLink
               href="https://github.com/chioio"
               className={cn('row-span-3 flex items-center')}>
-              <FaGithubAlt className={cn('w-6 h-6', 'hover:text-main-500')} />
+              <FaGithubAlt className={cn('w-6 h-6', 'hover:text-theme-500')} />
             </ExternalLink>
           </li>
           <li>
             <ExternalLink
               href="https://juejin.cn/user/1521379825688637"
               className={cn('row-span-3 flex items-center')}>
-              <IconJuejin className={cn('w-6 h-6', 'hover:text-main-500')} />
+              <IconJuejin className={cn('w-6 h-6', 'hover:text-theme-500')} />
             </ExternalLink>
           </li>
         </ul>

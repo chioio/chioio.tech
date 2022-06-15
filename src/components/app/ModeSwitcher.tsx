@@ -1,18 +1,25 @@
-import * as React from 'react'
+import type React from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 import cn from 'classnames'
 
 import { ImSun } from 'react-icons/im'
 import { FaRegMoon } from 'react-icons/fa'
 
-import { GlobalContext } from '@/contexts'
+import { context as global } from '@/components/app'
+import { Actions } from './Global'
 
 export const ModeSwitcher: React.FC = () => {
-  const { isDark, dispatch } = React.useContext(GlobalContext)
-  const [clicked, setClicked] = React.useState(false)
+  const { isDark, dispatch } = useContext(global)
+  const [clicked, setClicked] = useState(false)
 
-  const toggleMode = React.useCallback(() => {
-    dispatch({ type: 'TOGGLE_MODE' })
+  const toggleMode = useCallback(
+    () => dispatch({ type: Actions.TOGGLE_MODE }),
+    [isDark, dispatch]
+  )
+
+  useEffect(() => {
     setClicked(true)
+    return () => setClicked(false)
   }, [isDark])
 
   return (
@@ -21,7 +28,7 @@ export const ModeSwitcher: React.FC = () => {
       className={cn(
         'p-1.5 rounded-full transition-transform duration-500',
         'hover:bg-gray-400/20 dark:hover:bg-white/20',
-        'active:bg-main-500/30 dark:active:bg-main-500/30',
+        'active:bg-theme-500/30 dark:active:bg-theme-500/30',
         clicked && isDark ? ' rotate-45' : 'rotate-0'
       )}>
       {isDark ? <ImSun /> : <FaRegMoon />}

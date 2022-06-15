@@ -1,4 +1,5 @@
-import * as React from 'react'
+import type React from 'react'
+import { createContext, useState } from 'react'
 import cn from 'classnames'
 import { useTranslation } from 'next-i18next'
 
@@ -7,14 +8,14 @@ import { Sandpack, SandpackToggle } from '../sandpack'
 import { DocHeading } from '@/contentlayer/types/doc'
 import { motion } from 'framer-motion'
 
-export const AsideContext = React.createContext<{ isSandpack: boolean }>({
+export const AsideContext = createContext<{ isSandpack: boolean }>({
   isSandpack: false,
 })
 
 export const Aside: React.FC<{
   children: (isSandpack: boolean) => React.ReactNode
 }> = ({ children }) => {
-  const [isSandpack, setIsSandpack] = React.useState(false)
+  const [isSandpack, setIsSandpack] = useState(false)
 
   return (
     <AsideContext.Provider value={{ isSandpack }}>
@@ -43,9 +44,10 @@ const variants = {
   },
 }
 
-export const HeadingsAside: React.FC<
-  AsidesProps<{ headings: DocHeading[] }>
-> = ({ headings, visible }) => {
+export const HeadingsAside: React.FC<AsidesProps<{ headings: DocHeading[] }>> = ({
+  headings,
+  visible,
+}) => {
   const { t } = useTranslation('docs')
 
   return (

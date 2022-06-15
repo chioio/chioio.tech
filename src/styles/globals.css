@@ -42,11 +42,11 @@
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-main-500/20 rounded-full;
+    @apply bg-theme-500/20 rounded-full;
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
-    @apply bg-main-500/80 dark:bg-main-500;
+    @apply bg-theme-500/80 dark:bg-theme-500;
   }
 
   .scrollbar-lg::-webkit-scrollbar {
@@ -58,11 +58,11 @@
   }
 
   .scrollbar-lg::-webkit-scrollbar-thumb {
-    @apply bg-main-500/20 rounded-full;
+    @apply bg-theme-500/20 rounded-full;
   }
 
   .scrollbar-lg::-webkit-scrollbar-thumb:hover {
-    @apply bg-main-500/80 dark:bg-main-500;
+    @apply bg-theme-500/80 dark:bg-theme-500;
   }
 }
 

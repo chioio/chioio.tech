@@ -1,9 +1,10 @@
-import * as React from 'react'
+import type React from 'react'
+import { useId } from 'react'
 import cn from 'classnames'
 import { IoSearchSharp } from 'react-icons/io5'
 
 export const Search: React.FC = () => {
-  const id = React.useId()
+  const id = useId()
 
   return (
     <label
@@ -19,7 +20,7 @@ export const Search: React.FC = () => {
           'shadow-inner-light dark:shadow-inner-dark',
           'text-black dark:text-white',
           'placeholder:italic placeholder:font-light',
-          'focus:outline-none focus:ring-[0.15rem] focus:ring-main-500 dark:focus:ring-main-500',
+          'focus:outline-none focus:ring-[0.15rem] focus:ring-theme-500 dark:focus:ring-theme-500',
           'bg-gray-200/60 dark:bg-gray-800/60'
         )}
       />

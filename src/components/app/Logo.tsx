@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type React from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 
@@ -10,7 +10,7 @@ export const Logo: React.FC = () => (
         <span
           className={cn(
             'absolute top-[16.5px] right-[30.5px] w-[5.5px] h-[5.5px] rounded-full',
-            'bg-main-500'
+            'bg-theme-500'
           )}
         />
       </span>

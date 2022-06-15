@@ -1,4 +1,3 @@
-import * as React from 'react'
 import cn from 'classnames'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
@@ -20,7 +19,7 @@ export default function ReadmePage() {
       <main className={cn('grow mx-auto my-10 space-y-2 max-w-2xl w-full')}>
         <h1
           className={cn(
-            'px-4 py-2 w-fit border-b-8 border-main-500 text-5xl font-semibold'
+            'px-4 py-2 w-fit border-b-8 border-theme-500 text-5xl font-semibold'
           )}>
           README
         </h1>

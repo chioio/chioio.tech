@@ -1,10 +1,11 @@
-import * as React from 'react'
+import type React from 'react'
+import { useContext } from 'react'
 import cn from 'classnames'
 import { Sandpack as CodeSandpack } from '@codesandbox/sandpack-react'
-import { GlobalContext } from '@/contexts'
+import { context as global } from '@/components/app'
 
 export const Sandpack: React.FC = () => {
-  const { isDark } = React.useContext(GlobalContext)
+  const { isDark } = useContext(global)
   return <CodeSandpack template="react" theme={isDark ? 'dark' : 'light'} />
 }
 
@@ -15,7 +16,7 @@ export const SandpackToggle: React.FC<{ toggle: () => void }> = ({
     <button onClick={toggle} className={cn('fixed right-0 bottom-14')}>
       <div
         className={cn(
-          'flex items-center justify-center px-1 py-3 space-y-1 rounded-r-xl bg-main-500 uppercase writing-v-lr'
+          'flex items-center justify-center px-1 py-3 space-y-1 rounded-r-xl bg-theme-500 uppercase writing-v-lr'
         )}>
         <i
           className={cn(

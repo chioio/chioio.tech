@@ -1,4 +1,5 @@
-import * as React from 'react'
+import type React from 'react'
+import { useState } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -43,14 +44,14 @@ const TreeNode: React.FC<TreeNodeProps> = ({ node, level }) => {
     // level 3
     activeRoute.split('/').slice(0, 4).join('/') === node.route
 
-  const [uncollapsed, setUncollapsed] = React.useState(isNodeUncollapsed)
+  const [uncollapsed, setUncollapsed] = useState(isNodeUncollapsed)
 
   // When click the level 2 cate, keep the level 1 expanded.
   const cateRouteEqualed =
     activeRoute.split('/').slice(0, 3).join('/') ===
     node.route.split('/').slice(0, 3).join('/')
 
-  const [variants, setVariants] = React.useState<Variants>()
+  const [variants, setVariants] = useState<Variants>()
 
   useMount(() => {
     setVariants({
@@ -120,7 +121,7 @@ const TreeNodeLink: React.FC<TreeNodeLinkProps> = ({
         className={cn(
           'flex items-center justify-between px-3 py-1 rounded-md',
           route === activeRoute
-            ? 'text-main-500 dark:text-main-500 bg-main-500/10 dark:bg-main-500/10'
+            ? 'text-theme-500 dark:text-theme-500 bg-theme-500/10 dark:bg-theme-500/10'
             : 'hover:bg-gray-200/40 hover:dark:bg-gray-800/40',
           !collapsible && level > 0 ? 'font-light' : 'py-1'
         )}>
@@ -130,7 +131,7 @@ const TreeNodeLink: React.FC<TreeNodeLinkProps> = ({
             className={cn(
               'shrink-0 text-sm transition-transform duration-300',
               route === activeRoute
-                ? 'text-main-500 dark:text-main-500'
+                ? 'text-theme-500 dark:text-theme-500'
                 : 'text-gray-300 dark:text-gray-500',
               uncollapsed && 'rotate-90'
             )}

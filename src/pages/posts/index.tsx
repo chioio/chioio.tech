@@ -1,4 +1,3 @@
-import * as React from 'react'
 import cn from 'classnames'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
@@ -21,7 +20,7 @@ export default function PostsPage() {
         <h1
           className={cn(
             'px-4 py-2 w-fit border-b-8 text-5xl font-semibold',
-            'border-main-500'
+            'border-theme-500'
           )}>
           2022
         </h1>

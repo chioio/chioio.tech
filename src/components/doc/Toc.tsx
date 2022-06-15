@@ -1,6 +1,6 @@
-import * as React from 'react'
+import type React from 'react'
+import { useState } from 'react'
 import cn from 'classnames'
-import { useTranslation } from 'next-i18next'
 import { DocHeading } from '@/contentlayer/types/doc'
 import { titleToSlug } from '@/utils/title-to-slug'
 
@@ -9,7 +9,7 @@ interface TocProps {
 }
 
 export const Toc: React.FC<TocProps> = ({ headings }) => {
-  const [currentIndex, setCurrentIndex] = React.useState(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   return (
     <nav className={cn('grow')}>
@@ -32,7 +32,7 @@ export const Toc: React.FC<TocProps> = ({ headings }) => {
                   className={cn(
                     'px-3 py-1 w-full rounded-md text-sm',
                     i === currentIndex
-                      ? 'text-main-500 dark:text-main-500 bg-main-500/10 dark:bg-main-500/10'
+                      ? 'text-theme-500 dark:text-theme-500 bg-theme-500/10 dark:bg-theme-500/10'
                       : 'hover:bg-gray-200/40 hover:dark:bg-gray-800/40',
                     h.level > 2 && 'font-light'
                   )}

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type React from 'react'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
 import { IoLanguageSharp } from 'react-icons/io5'
@@ -19,7 +19,7 @@ export const LocaleSwitcher: React.FC = () => {
       className={cn(
         'p-1.5 rounded-full bg-opacity-30',
         'hover:bg-gray-400/20 dark:hover:bg-white/20',
-        'active:bg-main-500/30 dark:active:bg-main-500/30',
+        'active:bg-theme-500/30 dark:active:bg-theme-500/30',
         locale === 'en' && 'rotate-y'
       )}>
       <IoLanguageSharp />

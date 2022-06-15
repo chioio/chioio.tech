@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type React from 'react'
 import cn from 'classnames'
 import { IoHeart } from 'react-icons/io5'
 

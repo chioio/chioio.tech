@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type React from 'react'
 import cn from 'classnames'
 import { ExternalLink } from './ExternalLink'
 
@@ -15,18 +15,18 @@ export const PoweredBy: React.FC = () => (
     <div className={cn('flex items-center space-x-2')}>
       <ExternalLink href="https://nextjs.org" className={cn('', 'sm:w-36')}>
         <NextJsLogo
-          className={cn('ml-auto h-6', 'sm:h-fit', 'hover:text-main-500')}
+          className={cn('ml-auto h-6', 'sm:h-fit', 'hover:text-theme-500')}
         />
       </ExternalLink>
       <ExternalLink
         href="https://tailwindcss.com"
         className={cn('text-center', 'sm:w-36')}>
         <TailwindLogo
-          className={cn('mx-auto h-3', 'sm:h-fit', 'hover:text-main-500')}
+          className={cn('mx-auto h-3', 'sm:h-fit', 'hover:text-theme-500')}
         />
       </ExternalLink>
       <ExternalLink href="https://contentlayer.dev" className={cn('sm:w-36')}>
-        <ContentlayerLogo className={cn('mr-auto', 'hover:text-main-500')} />
+        <ContentlayerLogo className={cn('mr-auto', 'hover:text-theme-500')} />
       </ExternalLink>
     </div>
     <p className={cn('mr-6 text-xs text-center leading-relaxed')}>Powered by</p>

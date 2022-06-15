@@ -19,17 +19,17 @@ module.exports = {
     extend: {
       colors: {
         ...defaultTheme.colors,
-        main: {
-          50: withOpacityValue('--color-main-50'),
-          100: withOpacityValue('--color-main-100'),
-          200: withOpacityValue('--color-main-200'),
-          300: withOpacityValue('--color-main-300'),
-          400: withOpacityValue('--color-main-400'),
-          500: withOpacityValue('--color-main-500'),
-          600: withOpacityValue('--color-main-600'),
-          700: withOpacityValue('--color-main-700'),
-          800: withOpacityValue('--color-main-800'),
-          900: withOpacityValue('--color-main-900'),
+        theme: {
+          50: withOpacityValue('--color-theme-50'),
+          100: withOpacityValue('--color-theme-100'),
+          200: withOpacityValue('--color-theme-200'),
+          300: withOpacityValue('--color-theme-300'),
+          400: withOpacityValue('--color-theme-400'),
+          500: withOpacityValue('--color-theme-500'),
+          600: withOpacityValue('--color-theme-600'),
+          700: withOpacityValue('--color-theme-700'),
+          800: withOpacityValue('--color-theme-800'),
+          900: withOpacityValue('--color-theme-900'),
         },
       },
       boxShadow: {

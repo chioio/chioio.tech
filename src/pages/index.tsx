@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type React from 'react'
 import cn from 'classnames'
 import dynamic from 'next/dynamic'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
@@ -63,7 +63,7 @@ export default function HomePage() {
           className={cn(
             'mx-auto mt-2 px-1.5 py-1 w-fit rounded-lg align-middle text-2xl font-bold shadow-inner duration-500',
             'sm:ml-auto sm:mr-0 sm:mt-4 sm:text-5xl sm:px-3 sm:py-2',
-            'bg-gray-800/70 text-main-500'
+            'bg-gray-800/70 text-theme-500'
           )}>
           Explorer
         </code>

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type React from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import { useTranslation } from 'next-i18next'
@@ -54,33 +54,20 @@ export const getStaticProps: GetStaticProps<
 
   const pageRoute = params?.slug?.join('/') ?? ''
 
-  const doc =
-    allDocs.find((d) => d.route === pageRoute && d.locale === locale) ||
-    allDocs.find((d) => d.route === pageRoute)!
+  // const localeDocs = allDocs
+  //   .sort((a) => (a.locale === locale ? -1 : 1))
+  //   .reduce((acc, doc) => {
+  //     const routes = acc.map((d) => d.route)
+  //     if (!routes.includes(doc.route)) acc.push(doc)
+  //     return acc
+  //   }, [] as Doc[])
 
-  // remove route duplicated docs
-  const uniqueDocs = allDocs.reduce((p, d) => {
-    const routes = p.map((n) => n.route)
-    if (!routes.includes(d.route)) p.push(d)
+  const map: { [key: string]: number } = {}
+  const localeDocs = allDocs
+    .sort((a) => (a.locale === locale ? -1 : 1))
+    .filter((d) => (map[d.route] ? 0 : (map[d.route] = 1)))
 
-    return p
-  }, [] as Doc[])
-
-  // remove locale and route duplicated docs
-  const localeDocs = allDocs.reduce((p, d) => {
-    const routes = p.map((n) => n.route)
-    if (!routes.includes(d.route) && d.locale === locale) p.push(d)
-
-    return p
-  }, [] as Doc[])
-
-  if (localeDocs.length < uniqueDocs.length) {
-    uniqueDocs.map((ud) => {
-      if (!localeDocs.find((ld) => ld.route === ud.route)) {
-        localeDocs.push(ud)
-      }
-    })
-  }
+  const doc = localeDocs.find((d) => d.route === pageRoute)!
 
   const crumb = {
     title: '',
@@ -166,7 +153,7 @@ export default function DocsPage({
                 <a
                   className={cn(
                     'flex-1 leading-normal text-sm text-center',
-                    'hover:text-main-500 dark:hover:text-main-500'
+                    'hover:text-theme-500 dark:hover:text-theme-500'
                   )}>
                   {link.label}
                 </a>
@@ -188,12 +175,14 @@ export default function DocsPage({
               <ExternalLink
                 href="https://github.com/chioio"
                 className={cn('row-span-3 flex items-center justify-center')}>
-                <FaGithubAlt className={cn('w-6 h-6', 'hover:text-main-500')} />
+                <FaGithubAlt
+                  className={cn('w-6 h-6', 'hover:text-theme-500')}
+                />
               </ExternalLink>
               <ExternalLink
                 href="https://juejin.cn/user/1521379825688637"
                 className={cn('row-span-3 flex items-center justify-center')}>
-                <IconJuejin className={cn('w-6 h-6', 'hover:text-main-500')} />
+                <IconJuejin className={cn('w-6 h-6', 'hover:text-theme-500')} />
               </ExternalLink>
             </div>
             <MadeBy />

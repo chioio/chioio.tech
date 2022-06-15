@@ -1,4 +1,4 @@
-import * as React from 'react'
+import type React from 'react'
 import cn from 'classnames'
 
 export const IconJuejin: React.FC<React.SVGAttributes<SVGElement>> = (

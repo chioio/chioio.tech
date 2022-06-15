@@ -1,7 +1,7 @@
 @layer base {
   .prose p code {
     @apply px-1 rounded before:content-none after:content-none;
-    @apply text-main-500 bg-main-500/20;
+    @apply text-theme-500 bg-theme-500/20;
   }
 
   /* Code Block */
@@ -22,7 +22,7 @@
   }
 
   .prose div[data-rehype-pretty-code-title] {
-    @apply px-2 py-1 rounded-t-md text-sm text-white bg-main-500;
+    @apply px-2 py-1 rounded-t-md text-sm text-white bg-theme-500;
   }
 
   .prose div[data-rehype-pretty-code-title] + pre {
@@ -49,6 +49,6 @@
   }
 
   .prose pre code .line.highlighted {
-    @apply border-main-500 bg-main-500/10 dark:bg-main-500/10;
+    @apply border-theme-500 bg-theme-500/10 dark:bg-theme-500/10;
   }
 }
