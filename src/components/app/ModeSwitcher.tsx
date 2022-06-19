@@ -5,7 +5,7 @@ import cn from 'classnames'
 import { ImSun } from 'react-icons/im'
 import { FaRegMoon } from 'react-icons/fa'
 
-import { context as global } from '@/components/app'
+import { global } from '@/components/app'
 import { Actions } from './Global'
 
 export const ModeSwitcher: React.FC = () => {
@@ -14,7 +14,7 @@ export const ModeSwitcher: React.FC = () => {
 
   const toggleMode = useCallback(
     () => dispatch({ type: Actions.TOGGLE_MODE }),
-    [isDark, dispatch]
+    [dispatch]
   )
 
   useEffect(() => {

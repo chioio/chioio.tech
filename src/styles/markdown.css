@@ -35,6 +35,7 @@
 
   .prose pre code {
     counter-reset: line;
+    @apply py-4;
   }
 
   .prose pre code .line {

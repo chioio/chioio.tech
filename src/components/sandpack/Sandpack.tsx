@@ -2,7 +2,7 @@ import type React from 'react'
 import { useContext } from 'react'
 import cn from 'classnames'
 import { Sandpack as CodeSandpack } from '@codesandbox/sandpack-react'
-import { context as global } from '@/components/app'
+import { global } from '@/components/app'
 
 export const Sandpack: React.FC = () => {
   const { isDark } = useContext(global)
@@ -13,7 +13,9 @@ export const SandpackToggle: React.FC<{ toggle: () => void }> = ({
   toggle,
 }) => {
   return (
-    <button onClick={toggle} className={cn('fixed right-0 bottom-14')}>
+    <button
+      onClick={toggle}
+      className={cn('fixed right-0 bottom-14 z-50 hidden', 'xl:block')}>
       <div
         className={cn(
           'flex items-center justify-center px-1 py-3 space-y-1 rounded-r-xl bg-theme-500 uppercase writing-v-lr'

@@ -74,7 +74,7 @@ const reducers: Reducers<State, Action, Actions> = {
 const reducer = (state: State, action: Action) =>
   keyMatch(action.type, reducers, state, action)
 
-export const context = createContext<ContextProps>(null!)
+export const global = createContext<ContextProps>(null!)
 
 export const Global: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const [theme, setTheme] = useLocalStorage<{
@@ -129,8 +129,8 @@ export const Global: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   }, [state.isDark])
 
   return (
-    <context.Provider value={{ isDark: state.isDark, dispatch }}>
+    <global.Provider value={{ isDark: state.isDark, dispatch }}>
       {children}
-    </context.Provider>
+    </global.Provider>
   )
 }
